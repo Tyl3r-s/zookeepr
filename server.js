@@ -10,7 +10,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-function filterByQuery(query, animalsArray) {
+function filterByQuery(query, animalsArray) { 
   let personalityTraitsArray = [];
   let filteredResults = animalsArray;
   if (query.personalityTraits) {
@@ -106,7 +106,7 @@ app.get('/animals', (req, res) => {
 });
 
 app.get('/zookeepers', (req, res) => {
-  res.sendFile(path.join(_dirname, './public/zookeepers.html'));
+  res.sendFile(path.join(__dirname, './public/zookeepers.html'));
 });
 
 app.get('*', (req, res) => {
